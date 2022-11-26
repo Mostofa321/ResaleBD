@@ -2,11 +2,11 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className='container mx-auto w-11/12'>
-            <h1 className='text-center text-5xl mb-5 mt-14'>
+        <div className='container mx-auto w-11/12 bg-green-100' style={{boxShadow: "-10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1)"}}>
+            <h1 className='text-center text-5xl pt-7 mt-7'>
                 CONTACT US
             </h1>
-            <div className="card  mb-10  bg-green-100 " style={{boxShadow: "-10px 10px 0px rgba(33, 33, 33, 1), -20px 20px 0px rgba(33, 33, 33, 0.7), -30px 30px 0px rgba(33, 33, 33, 0.4), -40px 40px 0px rgba(33, 33, 33, 0.1)"}} >
+            <div className="card mb-10">
                 <div className="md:flex  gap-0 flex-row-reverse justify-center items-center content-center">
                     <div className="basis-1/2">
                         <form className='mx-auto p-12  w-full' >

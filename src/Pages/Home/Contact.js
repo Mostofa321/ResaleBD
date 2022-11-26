@@ -11,12 +11,12 @@ const Contact = () => {
                     <div className="basis-1/2">
                         <form className='mx-auto p-12  w-full' >
                             <div className="mb-3">
-                                <input type="text" name='name' className="input input-bordered w-full " placeholder='Enter Your Name' id="exampleInputText" aria-describedby="textHelp" />
+                                <input type="text" name='name' className="input input-bordered w-full " placeholder='Enter Your Name' />
                             </div>
                             <div className="mb-3">
-                                <input type="email" name='email' className="input input-bordered w-full " placeholder='Email' id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <input type="email" name='email' className="input input-bordered w-full " placeholder='Email' />
                             </div>
-                            <div className="form-floating">
+                            <div>
                                 <textarea className="textarea textarea-bordered w-full" name='description' placeholder="Enter your message"></textarea>
                             </div>
                             <button type="submit" className="btn btn-outline mt-3 w-full">Send Message</button>

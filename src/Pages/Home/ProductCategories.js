@@ -7,7 +7,6 @@ const ProductCategories = () => {
             .then(res => res.json())
             .then(data => setProductCategories(data))
     }, [])
-    console.log(productCategories)
     return (
         <div className='container mx-auto mt-10 flex flex-col sm:flex-row sm:items-center'>
             <div className='flex sm:w-1/4'>
@@ -19,7 +18,7 @@ const ProductCategories = () => {
                     productCategories.map(productCategorie => {
                         const { id, categoryName, categoryLogo } = productCategorie
                         return (
-                            <div className="  my-5 mx-auto">
+                            <div className="  my-5 mx-auto" key={id}>
                                 {/* <div className="sm:w-24 w-32 mx-auto rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
                                     <img src={categoryLogo} className="  rounded-full" />
                                 </div> */}

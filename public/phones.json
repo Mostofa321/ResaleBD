@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "categoryId": 1,
+        "name": "iPhone 13 mini",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg",
+        "location": "ahsan bag kamrangir char dhaka-1211",
+        "resale price": "10000",
+        "original price": "50000",
+        "years of use": "2",
+        "seller's name": "selim",
+        "post time": "11/25/2022, 11:22:47 PM"
+    },
+    {
+        "id": 2, 
+        "categoryId": 1,
+        "name": "iPhone 13 Pro",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro.jpg",
+        "location": "ahsan bag kamrangir char dhaka-1211",
+        "resale price": "10000",
+        "original price": "50000",
+        "years of use": "2",
+        "seller's name": "selim",
+        "post time": "11/25/2022, 11:22:47 PM"
+    },
+    {
+        "id": 3,
+        "categoryId": 2,
+        "name": "Galaxy S22 5G",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg",
+        "location": "ahsan bag kamrangir char dhaka-1211",
+        "resale price": "10000",
+        "original price": "50000",
+        "years of use": "2",
+        "seller's name": "selim",
+        "post time": "11/25/2022, 11:22:47 PM"
+    },
+    {
+        "id": 4,
+        "categoryId": 2,
+        "name": "Galaxy S22+ 5G",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-plus-5g.jpg",
+        "location": "ahsan bag kamrangir char dhaka-1211",
+        "resale price": "10000",
+        "original price": "50000",
+        "years of use": "2",
+        "seller's name": "selim",
+        "post time": "11/25/2022, 11:22:47 PM"
+    },
+    {
+        "id": 5,
+        "categoryId": 3,
+        "name": "Phon no 5",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg",
+        "location": "ahsan bag kamrangir char dhaka-1211",
+        "resale price": "10000",
+        "original price": "50000",
+        "years of use": "2",
+        "seller's name": "selim",
+        "post time": "11/25/2022, 11:22:47 PM"
+    },
+    {
+        "id": 6,
+        "categoryId": 3,
+        "name": "Phone no 6",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-plus-5g.jpg",
+        "location": "ahsan bag kamrangir char dhaka-1211",
+        "resale price": "10000",
+        "original price": "50000",
+        "years of use": "2",
+        "seller's name": "selim",
+        "post time": "11/25/2022, 11:22:47 PM"
+    }
+]

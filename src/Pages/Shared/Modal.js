@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Modal = ({ productName, productPrice }) => {
     const { user } = useContext(AuthContext);
@@ -17,6 +19,7 @@ const Modal = ({ productName, productPrice }) => {
         setBookedProduct(bookedProductInfo);
         
         e.target.reset();
+        toast("the item is booked!")
     };
     
     console.log(bookedProduct)
@@ -73,6 +76,7 @@ const Modal = ({ productName, productPrice }) => {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

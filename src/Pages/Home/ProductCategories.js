@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 
 const ProductCategories = () => {
-    const [productCategories, setProductCategories] = useState([]);
-    useEffect(() => {
-        fetch('productCategories.json')
-            .then(res => res.json())
-            .then(data => setProductCategories(data))
-    }, [])
+    const { data: productCategories = [], isLoading } = useQuery({
+        queryKey: ['categories'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/categories');
+            const data = await res.json();
+            return data
+        }
+    });
+
+    if(isLoading){
+        return <div>Loading.....</div>
+    }
+
     return (
         <div className='container mx-auto mt-10 flex flex-col sm:flex-row sm:items-center'>
             <div className='flex sm:w-1/4'>
@@ -16,12 +24,12 @@ const ProductCategories = () => {
             <div className='flex flex-col sm:flex-row sm:w-3/4  justify-between '>
                 {
                     productCategories.map(productCategorie => {
-                        const { id, categoryName, categoryLogo } = productCategorie
+                        const { _id, categoryName, categoryLogo } = productCategorie
                         return (
-                            <div className="  my-5 mx-auto" key={id}>
-                                <div className="sm:w-24 w-32 mx-auto rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
+                            <div className="  my-5 mx-auto" key={_id}>
+                                {/* <div className="sm:w-24 w-32 mx-auto rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
                                     <img src={categoryLogo} className="  rounded-full" />
-                                </div>
+                                </div> */}
                                 <h1 className='text-4xl mt-2 text-center btn btn-outline border-0'>{categoryName}</h1>
                             </div>
                         )

@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
-const AdvertisedProducts = () => {
-    const [availableProducts, setAvailableProducts] = useState([]);
-    useEffect(() => {
-        fetch('phones.json')
-            .then(res => res.json())
-            .then(data => setAvailableProducts(data))
-    }, [])
+const Products = () => {
+    const products =  useLoaderData();
+    // const [products, setProducts] = useState([]);
+    console.log(products)
+    
+
     return (
         <div className='container mx-auto my-10'>
             <h1 className='text-center text-4xl'>Available Products</h1>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 bg-green-100 p-10'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-10 mt-10 bg-green-100 p-10 justify-items-center'>
                 {
-                    availableProducts.map(availableProduct => {
-                        const { id, image, name, location, resalePrice, originalPrice, yearsOfUse, postTime, sellerName } = availableProduct
+                    products.map(product => {
+                        console.log(product);
+                        const { _id, image, name, location, resalePrice, originalPrice, yearsOfUse, postTime, sellerName } = product
                         return (
-                            <div className="card w-96 bg-base-100 shadow-xl" key={id}>
+                            <div className="card w-96 mx-auto bg-base-100 shadow-xl" key={_id}>
                                 <figure className="px-10 pt-10">
                                     <img src={image} alt="Shoes" className="rounded-xl" />
                                 </figure>
@@ -40,6 +41,4 @@ const AdvertisedProducts = () => {
     );
 };
 
-export default AdvertisedProducts;
-
-
+export default Products;

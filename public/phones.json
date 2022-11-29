@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "categoryId": 1,
+        "categoryId": "6384baf13345c946a82366db",
         "name": "iPhone 13 mini",
         "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg",
         "location": "ahsan bag kamrangir char dhaka-1211",
@@ -13,7 +13,7 @@
     },
     {
         "id": 2, 
-        "categoryId": 1,
+        "categoryId": "6384baf13345c946a82366db",
         "name": "iPhone 13 Pro",
         "image": "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro.jpg",
         "location": "ahsan bag kamrangir char dhaka-1211",
@@ -25,7 +25,7 @@
     },
     {
         "id": 3,
-        "categoryId": 2,
+        "categoryId": "6384baf13345c946a82366dc",
         "name": "Galaxy S22 5G",
         "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg",
         "location": "ahsan bag kamrangir char dhaka-1211",
@@ -37,7 +37,7 @@
     },
     {
         "id": 4,
-        "categoryId": 2,
+        "categoryId": "6384baf13345c946a82366dc",
         "name": "Galaxy S22+ 5G",
         "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-plus-5g.jpg",
         "location": "ahsan bag kamrangir char dhaka-1211",
@@ -49,9 +49,9 @@
     },
     {
         "id": 5,
-        "categoryId": 3,
-        "name": "Phon no 5",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg",
+        "categoryId": "6384baf13345c946a82366dd",
+        "name": "Redmi Note 10 Pro",
+        "image": "https://i.ibb.co/3WWMyJV/Redmi-Note-10-Pro.jpg",
         "location": "ahsan bag kamrangir char dhaka-1211",
         "resalePrice": "10000",
         "originalPrice": "50000",
@@ -61,9 +61,9 @@
     },
     {
         "id": 6,
-        "categoryId": 3,
-        "name": "Phone no 6",
-        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-plus-5g.jpg",
+        "categoryId": "6384baf13345c946a82366dd",
+        "name": "Redmi Note 11 Pro",
+        "image": "https://i.ibb.co/xMKGy5W/Redmi-Note-11-Pro.jpg",
         "location": "ahsan bag kamrangir char dhaka-1211",
         "resalePrice": "10000",
         "originalPrice": "50000",

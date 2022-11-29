@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 
 const ProductCategories = () => {
     const { data: productCategories = [], isLoading } = useQuery({
@@ -11,7 +12,7 @@ const ProductCategories = () => {
         }
     });
 
-    if(isLoading){
+    if (isLoading) {
         return <div>Loading.....</div>
     }
 
@@ -26,12 +27,14 @@ const ProductCategories = () => {
                     productCategories.map(productCategorie => {
                         const { _id, categoryName, categoryLogo } = productCategorie
                         return (
-                            <div className="  my-5 mx-auto" key={_id}>
-                                {/* <div className="sm:w-24 w-32 mx-auto rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
-                                    <img src={categoryLogo} className="  rounded-full" />
-                                </div> */}
-                                <h1 className='text-4xl mt-2 text-center btn btn-outline border-0'>{categoryName}</h1>
-                            </div>
+                            <Link to={`/category/${_id}`} key={_id}>
+                                <div className="  my-5 mx-auto" >
+                                    <div className="sm:w-24 w-32 mx-auto rounded-full ring ring-black ring-offset-base-100 ring-offset-2">
+                                        <img src={categoryLogo} className="  rounded-full" />
+                                    </div>
+                                    <h1 className='text-4xl mt-2 text-center btn btn-outline border-0'>{categoryName}</h1>
+                                </div>
+                            </Link>
                         )
                     })
                 }

@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
+import Modal from '../Shared/Modal';
 
 const AdvertisedProducts = () => {
-    // const [availableProducts, setAvailableProducts] = useState([]);
-    // useEffect(() => {
-    //     fetch('phones.json')
-    //         .then(res => res.json())
-    //         .then(data => setAvailableProducts(data))
-    // }, []);
-
+    const [productName, setProductName] = useState("");
+    const [productPrice, setProductPrice] = useState("");
     const { data: availableProducts = [], isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
@@ -21,6 +17,7 @@ const AdvertisedProducts = () => {
     if (isLoading) {
         return <div>Loading.....</div>
     }
+
 
     return (
         <div className='container mx-auto my-10'>
@@ -43,7 +40,10 @@ const AdvertisedProducts = () => {
                                     <p>posted on: {postTime}</p>
                                     <p>seller: {sellerName}</p>
                                     <div className="card-actions">
-                                        <button className="btn btn-primary">Book now</button>
+                                        <label onClick={()=> {
+                                            setProductName(name);
+                                            setProductPrice(resalePrice)
+                                        }} htmlFor="my-modal-6" className="btn btn-primary">Book now</label>
                                     </div>
                                 </div>
                             </div>
@@ -51,6 +51,7 @@ const AdvertisedProducts = () => {
                     })
                 }
             </div>
+            <Modal productName={productName} productPrice={productPrice}/>
         </div>
     );
 };

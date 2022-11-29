@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const signOut = () => {
+        logOut()
+            .then(() => {
+                console.log('Sign Outed Uccesfully')
+            })
+            .catch(err => {
+                console.log(err)
+            });
+    }
     return (
         <div className='sticky top-0 bg-base-100 z-10'>
             <div className="navbar bg-base-100 container mx-auto py-5 ">
@@ -24,7 +35,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    {
+                        user?.uid ?
+                            <Link onClick={signOut} className="btn">LogOut</Link>
+                            :
+                            <Link to='/login' className="btn">Get Login</Link>
+                    }
                 </div>
             </div>
         </div>

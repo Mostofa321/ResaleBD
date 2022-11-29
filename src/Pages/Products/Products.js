@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Modal from '../Shared/Modal';
 
 const Products = () => {
-    const products =  useLoaderData();
-    // const [products, setProducts] = useState([]);
-    console.log(products)
-    
+    const products = useLoaderData();
+    const [productName, setProductName] = useState("");
+    const [productPrice, setProductPrice] = useState("");
+
 
     return (
         <div className='container mx-auto my-10'>
@@ -13,7 +14,6 @@ const Products = () => {
             <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-10 mt-10 bg-green-100 p-10 justify-items-center'>
                 {
                     products.map(product => {
-                        console.log(product);
                         const { _id, image, name, location, resalePrice, originalPrice, yearsOfUse, postTime, sellerName } = product
                         return (
                             <div className="card w-96 mx-auto bg-base-100 shadow-xl" key={_id}>
@@ -29,7 +29,10 @@ const Products = () => {
                                     <p>posted on: {postTime}</p>
                                     <p>seller: {sellerName}</p>
                                     <div className="card-actions">
-                                        <button className="btn btn-primary">Book now</button>
+                                        <label onClick={() => {
+                                            setProductName(name);
+                                            setProductPrice(resalePrice)
+                                        }} htmlFor="my-modal-6" className="btn btn-primary">Book now</label>
                                     </div>
                                 </div>
                             </div>
@@ -37,6 +40,7 @@ const Products = () => {
                     })
                 }
             </div>
+            <Modal productName={productName} productPrice={productPrice}/>
         </div>
     );
 };

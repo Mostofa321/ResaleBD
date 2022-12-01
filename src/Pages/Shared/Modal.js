@@ -15,14 +15,14 @@ const Modal = ({ productName, productPrice }) => {
         const productPrice = e.target.productPrice.value;
         const phoneNumber = e.target.phoneNumber.value;
         const meetingLocation = e.target.meetingLocation.value;
-        const bookedProductInfo = {userName, userEmail, productName, productPrice, phoneNumber, meetingLocation};
+        const bookedProductInfo = { userName, userEmail, productName, productPrice, phoneNumber, meetingLocation};
         setBookedProduct(bookedProductInfo);
         
         e.target.reset();
         toast("the item is booked!")
     };
     
-    console.log(bookedProduct)
+    // console.log(bookedProduct)
     
 
     return (

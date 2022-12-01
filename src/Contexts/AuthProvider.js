@@ -8,6 +8,7 @@ export const AuthContext = createContext('');
 export const auth = getAuth(app);
 const UserContexts = ({ children }) => {
     const [user, setUser] = useState('');
+    const [savedUser, setSavedUser] = useState('');
     const [loading, setLoading] = useState(true);
     // sign up with email & password 
     const signUp = (email, password) => {
@@ -37,8 +38,16 @@ const UserContexts = ({ children }) => {
             setLoading(false);
         });
         return () => unSubscribe();
-    }, [])
-    const contextValue = { user, loading, logOut, signUp, login, googleLogin }
+    }, []);
+    // get saved user from database 
+    useEffect(()=>{
+        fetch(`http://localhost:5000/user?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data => setSavedUser(data))
+    },[user]);
+    console.log(savedUser);
+    
+    const contextValue = { user, savedUser, loading, logOut, signUp, login, googleLogin }
     return (
         <AuthContext.Provider value={contextValue}>
             {

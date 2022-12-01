@@ -6,8 +6,8 @@ const Login = () => {
     const navigate = useNavigate();
     let location = useLocation();
     let { login, googleLogin } = useContext(AuthContext);
-    const [errMessage, setErrMessage] = useState(null)
-    const [successMessage, setSuccesMeassage] = useState(null)
+    const [errMessage, setErrMessage] = useState(null);
+    const [successMessage, setSuccesMeassage] = useState(null);
     // logit with email and password 
     const loginUser = (e) => {
         e.preventDefault();
@@ -20,7 +20,6 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
                 setSuccesMeassage('user logined successfully');
                 form.reset();
                 let from = location.state?.from?.pathname || "/";
@@ -38,6 +37,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                const googleUser = { name: user.displayName, email: user.email, userRole: "buyer" };
+                saveUser(googleUser);
                 let from = location.state?.from?.pathname || "/";
                 navigate(from, { replace: true });
             })
@@ -45,16 +46,35 @@ const Login = () => {
                 console.log(err)
             })
     }
+
+    // save google user to database 
+    const saveUser = (user) => {
+        console.log(user)
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    // return toast("Food Added Successfully!")
+                };
+            })
+            .catch(err => console.log(err));
+    };
     return (
         <div className='pt-5 container flex mx-auto my-10'>
             <div className='mx-auto p-5 form w-11/12 md:w-5/12' style={{ boxShadow: "rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px" }}>
                 <form onSubmit={loginUser}>
                     <h2 className='mb-4'>Login</h2>
                     <div className="mb-3">
-                        <input type="email" name='email' className="input input-bordered w-full" placeholder='email'/>
+                        <input type="email" name='email' className="input input-bordered w-full" placeholder='email' />
                     </div>
                     <div className="mb-3">
-                        <input type="password" name='password' className="input input-bordered w-full" placeholder='password'/>
+                        <input type="password" name='password' className="input input-bordered w-full" placeholder='password' />
                     </div>
                     {
                         successMessage ? <p className='text-success'>{successMessage}</p> : <p className='text-danger'>{errMessage}</p>

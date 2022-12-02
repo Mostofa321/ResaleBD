@@ -13,6 +13,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Products from "../Pages/Products/Products";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
                 path: '/category/:id',
                 element: <Products/>,
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/category/${params.id}`);
+                    return fetch(`https://assignment-12-server-red.vercel.app/category/${params.id}`);
                   }
             },
             {
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout/>,
+        element: <PrivateRoute><DashboardLayout/></PrivateRoute>,
         children: [
             {
                 path: '/dashboard',

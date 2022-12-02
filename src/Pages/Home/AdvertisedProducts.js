@@ -8,7 +8,7 @@ const AdvertisedProducts = () => {
     const { data: availableProducts = [], isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/products');
+            const res = await fetch('https://assignment-12-server-red.vercel.app/products');
             const data = await res.json();
             return data
         }
@@ -29,7 +29,7 @@ const AdvertisedProducts = () => {
                         return (
                             <div className="card w-96 bg-base-100 shadow-xl" key={_id}>
                                 <figure className="px-10 pt-10">
-                                    <img src={image} alt="Shoes" className="rounded-xl" />
+                                    <img src={image}  alt="Mobile" className="rounded-xl h-52" />
                                 </figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{name}</h2>

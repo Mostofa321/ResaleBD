@@ -5,7 +5,7 @@
 // const SaveUser = ({user}) => {
 //     console.log(user)
 //     useEffect(()=>{
-//         fetch('http://localhost:5000/user', {
+//         fetch('https://assignment-12-server-red.vercel.app/user', {
 //             method: 'POST',
 //             headers: {
 //                 'Content-Type': 'application/json',

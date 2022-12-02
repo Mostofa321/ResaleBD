@@ -50,7 +50,7 @@ const Login = () => {
     // save google user to database 
     const saveUser = (user) => {
         console.log(user)
-        fetch('http://localhost:5000/user', {
+        fetch('https://assignment-12-server-red.vercel.app/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

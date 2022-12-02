@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 
 const AllSeller = () => {
+
     return (
         <div>
             <h1 className='text-2xl'>All Seller</h1>

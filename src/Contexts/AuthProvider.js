@@ -41,11 +41,10 @@ const UserContexts = ({ children }) => {
     }, []);
     // get saved user from database 
     useEffect(()=>{
-        fetch(`http://localhost:5000/user?email=${user?.email}`)
+        fetch(`https://assignment-12-server-red.vercel.app/user?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setSavedUser(data))
     },[user]);
-    console.log(savedUser);
     
     const contextValue = { user, savedUser, loading, logOut, signUp, login, googleLogin }
     return (

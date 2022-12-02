@@ -18,7 +18,7 @@ const Products = () => {
                         return (
                             <div className="card w-96 mx-auto bg-base-100 shadow-xl" key={_id}>
                                 <figure className="px-10 pt-10">
-                                    <img src={image} alt="Shoes" className="rounded-xl" />
+                                    <img src={image} alt="Mobile" className="rounded-xl h-52" />
                                 </figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{name}</h2>

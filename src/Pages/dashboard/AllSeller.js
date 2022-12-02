@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 const AllSeller = () => {
     const [sellers, setSellers] = useState([]);
     useEffect(() => {
-        fetch('https://assignment-12-server-red.vercel.app/sellers')
+        fetch('https://assignment-12-server-red.vercel.app/allSellers')
             .then(res => res.json())
             .then(data => setSellers(data))
     }, [])

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 const AllBuyer = () => {
     const [buyers, setBuyers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allBuyer')
+        fetch('https://assignment-12-server-red.vercel.app/allBuyer')
             .then(res => res.json())
             .then(data => setBuyers(data))
     }, []);
